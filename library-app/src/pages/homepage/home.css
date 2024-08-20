@@ -1,0 +1,118 @@
+.header{
+    display: flex;
+    flex-direction: row;
+    overflow: hidden;
+    
+    
+}
+.header_container{
+    
+    flex: 2;
+    width: 80%;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    flex-direction: column;
+    z-index: 2;
+    
+
+    margin: 5rem 5rem 5rem 2rem;
+    
+}
+
+.header_container h1{
+    font-family: var(--font-family);
+    font-weight: 800;
+    font-size: 64px;
+    line-height: 75px;
+    letter-spacing: -0.04rem;   
+    
+}
+
+.header_container p{
+    font-family: var(--font-family);
+    font-style: normal;
+    font-weight: normal;
+    font-size: 20px;
+    line-height: 27px;
+    color:hsla(191, 40%, 44%, 1);
+    
+    margin-top: 1.5rem;
+}
+.header_search-bar{
+    width: 100%;
+    margin: 2rem 0 1rem;
+    display: flex;
+    flex-direction: row;
+}
+.header_search-bar input {
+    
+    
+    width: 100%;
+    min-height: 60px;
+    font-family: var(--font-family);
+    font-weight: 400;
+    font-size: 20px;
+    line-height: 28px;
+    background: #fff;
+    border: none;
+    padding: 0 1rem;
+    outline: none;
+    color: hsla(191, 40%, 5%, 1);
+    
+    border-radius: 50px;
+    box-shadow: inset grey 0px 0px 100px -12px; 
+}
+
+.header_search-bar button{
+    position: relative;
+    right: 103px;
+    top: 5px;
+    width: 100px;
+    height: 50px;
+    min-height: 30px;
+    font-family: var(--font-family);
+    font-weight: 400;
+    font-size: 20px;
+    line-height: 28px;
+    background: hsla(252, 58%, 53%, 1);
+    border: none;
+    padding: 0 1rem;
+    color: #fff;
+    cursor: pointer;
+    outline: none;
+    
+    border-radius: 50px;
+}
+/*
+.header_picture{
+    flex: 2;
+    width: 30%;
+    
+}
+.header_picture img{
+    height: 100%;
+    width: 120%;
+    position: relative;
+    overflow: hidden;
+    right: 0px;
+    top: 10px;
+    bottom:-20px;
+    
+    
+}
+*/
+.header_picture{
+    flex: 2;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 30%;
+
+}
+.header_picture img{
+    position: relative;
+    right: -250px;
+
+    height: 110%;
+}

@@ -1,0 +1,24 @@
+/* src/components/Global/Topbar.css */
+
+.topbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 20px;
+    background-color: #333;
+    color: white;
+  }
+  
+  .topbar__logo h2 {
+    margin-left: 200px;
+  }
+  
+  .topbar__menu button {
+    margin-left: 15px;
+    background-color: #444;
+    color: white;
+    border: none;
+    padding: 5px 10px;
+    cursor: pointer;
+  }
+  

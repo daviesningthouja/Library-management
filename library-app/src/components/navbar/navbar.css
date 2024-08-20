@@ -1,0 +1,99 @@
+@font-face {
+    font-family: Aloevera;
+    src: url('../../assets/Aloevera-OVoWO.ttf');
+}
+
+.navbar{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 20px;
+}
+.navbar_logo{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+}
+.navbar_logo-text{
+    font-size: 35px;
+    font-family: 'Aloevera';
+    font-weight: bold;
+    color:var(--color-text);
+}
+.wrap{width:100%;}
+.gradient-text{
+  font-family:var(--font-family);
+  background: linear-gradient(to right, rgb(126, 112, 115),rgb(192, 219, 255),rgb(170, 0, 255));
+  background-size: 200% 200%;
+  animation: rainbow 2s ease-in-out infinite;
+  background-clip: text;
+  -webkit-background-clip:text;
+  color:rgb(255, 255, 255);
+  font-size:1.2rem;
+  width:80vw;
+  
+  display:block;
+  text-align:center;
+  transition: color .2s ease-in-out;
+  text-transform:uppercase;
+  font-weight:900;
+}
+.gradient-text:hover{
+  color:rgba(0,0,0,0);
+}
+@keyframes rainbow { 
+  0%{background-position:left}
+  50%{background-position:right}
+  100%{background-position:left}
+}
+.navbar_link{
+    width: 500px;
+    min-width: 350px;
+    max-width: 500px;
+    color: white;
+}
+.navbar_link-container{
+    display: flex;
+    list-style: none;
+    justify-content: space-around;
+}
+.navbar_login-container{
+    display: flex;
+    flex-direction: column;
+}
+.navbar_login-icon{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    
+}
+.navbar_login-btn-container{
+    display: flex;
+    justify-content: center;
+    color: #fff;
+}
+.navbar_login-btn{
+    padding: 5px;
+    font-size: 10px;
+    background-color: var(--gradient-bg);
+    border: none;
+    color: #fff;
+    cursor: pointer;
+    outline: none;
+}
+.navbar_sign-btn{
+    padding: 5px;
+    font-size: 10px;
+    
+    background-color: hsla(15, 100%, 51%, 1);
+    border-radius: 20px;
+    border: none;
+    cursor: pointer;
+    outline: none;
+}
+.navbar_logo-img{
+    height: 60px;
+    width: 60px;
+}
