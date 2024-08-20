@@ -49,11 +49,11 @@ function Dashboard() {
               <p>Searches</p>
             </span>
           </li>
-          <li>
-            <i className="info" />
+          <li><i className='bx bx-dollar-circle'></i>
+            <span className="info">
             <h3>$6,742</h3>
             <p>Total Sales</p>
-            <span />
+            </span >
           </li>
         </ul>
 

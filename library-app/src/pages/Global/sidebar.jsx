@@ -3,9 +3,8 @@ import {useState} from 'react';
 import { Link } from 'react-router-dom'; // Assuming you use react-router for navigation
 //import  from "../../assets/ppf.png";
 
-function Sidebar() {
+function Sidebar({isSidebarOpen}) {
   const [activeIndex, setActiveIndex] = useState(1); // Default active index set to "Admin"
-  
   
   
   const handleClick = (index) => {
@@ -15,8 +14,8 @@ function Sidebar() {
  
 
   return (
-    <div className='wrapper_Sidebar'>
-      <div className= "sidebar">
+    
+      <div className={`sidebar ${isSidebarOpen ? '' : 'close'}`}>
           <a href="#" className="logo">
               <i className='bx bx-code-alt'></i>
               <div className="logo-name"><span>Asmr</span>Prog</div>
@@ -56,7 +55,7 @@ function Sidebar() {
               </li>
           </ul>
       </div>
-    </div>
+   
   );
 }
 

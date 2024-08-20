@@ -1,13 +1,19 @@
 import './DashboardLayout.css';
 import { Topbar, Sidebar } from '../Global'
-
+import { useState } from 'react';
 const DashboardLayout = ({children}) => {
- 
+  const [isSidebarOpen, setIsSidebarOpen] = useState(true);
+
+  const toggleSidebar = () => {
+    setIsSidebarOpen(!isSidebarOpen);
+  };
+  
+
   return (
-    <div className='wrapper_dashboardlayout' >
-      <Sidebar className='wrapper_dashboardlayout'/>
+    <div className={`wrapper_dashboardlayout ${isSidebarOpen ? '' : 'close'}`} >
+      <Sidebar isSidebarOpen={isSidebarOpen} />
       <div className='content'>
-        <Topbar className='wrapper_dashboardlayout'/>
+        <Topbar  toggleSidebar={toggleSidebar}  />
         
         {children }
         

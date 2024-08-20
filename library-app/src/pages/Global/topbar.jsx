@@ -2,14 +2,12 @@
 import { useState, useEffect } from 'react';
 //import '../layout/DashboardLayout.css'; // Create this CSS file for styling
 
-function Topbar() {
+function Topbar({toggleSidebar}) {
     const [isDarkMode, setDarkMode] = useState(false);
-    const [isSidebarClosed, setSidebarClosed] = useState(false);
+    
     const [isSearchFormVisible, setSearchFormVisible] = useState(false);
-
-    const toggleSidebar = () => {
-        setSidebarClosed(!isSidebarClosed);
-      };
+     
+    
 
       const toggleSearchForm = (e) => {
         if (window.innerWidth < 576) {
@@ -20,9 +18,9 @@ function Topbar() {
       
       const handleResize = () => {
         if (window.innerWidth < 768) {
-          setSidebarClosed(true);
+          //setSidebarClosed(true);
         } else {
-          setSidebarClosed(false);
+          //setSidebarClosed(false);
         }
         if (window.innerWidth > 576) {
           setSearchFormVisible(false);
@@ -41,9 +39,9 @@ function Topbar() {
         };
       }, [isDarkMode]);
   return (
-    <div className={`dashboard-container ${isSidebarClosed ? 'close' : ''}`}>
+    <div >
       <nav>
-        <i className='bx bx-menu' onClick={toggleSidebar}></i>
+        <i className='bx bx-menu'  onClick={toggleSidebar}></i>
         <form action="#">
             <div className="form-input">
                 <input type="search" placeholder="Search..."/>
