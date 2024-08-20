@@ -33,10 +33,10 @@ html{
     overflow-x: hidden;
 }
 
-.wrapper_dashboardlayout.dark{
-    --light: #181a1e;
+body.dark{
+    --light: #222424;
     --grey: #25252c;
-    --dark: #fbfbfb
+    --dark: #ffffff;
 }
 
 .wrapper_dashboardlayout{

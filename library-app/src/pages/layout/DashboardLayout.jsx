@@ -5,11 +5,11 @@ const DashboardLayout = ({children}) => {
  
   return (
     <div className='wrapper_dashboardlayout' >
-      <Topbar />
+      <Sidebar className='wrapper_dashboardlayout'/>
       <div className='content'>
-        <Sidebar />
+        <Topbar className='wrapper_dashboardlayout'/>
         
-        {children}
+        {children }
         
         
       </div>
