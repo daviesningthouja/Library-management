@@ -1,14 +1,14 @@
 // src/components/Dashboard/Dashboard.js
 
-import { DashboardLayout } from "../index.js";
-//import { Link } from "react-router-dom";
-import {User_Catalog} from "./index.js";
-const Dashboard = () =>{
+import { Admin_DashboardLayout } from "../../index.js";
+import { Link } from "react-router-dom";
+import {Admin_Catalog} from "../index.js";
+const Admin_Dashboard = () =>{
   return (
-    <DashboardLayout>
+    <Admin_DashboardLayout>
       <main className="wrapper_dashboard">
       
-        <User_Catalog/>
+        <Admin_Catalog/>
         <div className="bottom-data">
           <div className="orders">
             <div className="header">
@@ -93,8 +93,8 @@ const Dashboard = () =>{
           </div>
         </div>
       </main>
-    </DashboardLayout>
+    </Admin_DashboardLayout>
   );
 }
 
-export default Dashboard;
+export default Admin_Dashboard;

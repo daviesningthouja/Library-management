@@ -319,9 +319,15 @@ body.dark{
 }
 
 .content main .header .left h1{
-    font-size: 36px;
+    font-size: 25px;
     font-weight: 600;
     margin-bottom: 10px;
+    color: var(--dark);
+}
+.content main .header .left h2{
+    font-size: 18px;
+    font-weight: 600;
+    
     color: var(--dark);
 }
 
@@ -403,6 +409,10 @@ body.dark{
 .content main .insights li:nth-child(4) .bx{
     background: var(--light-danger);
     color: var(--danger);
+}
+.content main .insights li:nth-child(5) .bx{
+    background: var(--dark-grey);
+    color: var(--dark);
 }
 
 .content main .insights li .info h3{

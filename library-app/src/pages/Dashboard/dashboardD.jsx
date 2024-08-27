@@ -1,14 +1,68 @@
 // src/components/Dashboard/Dashboard.js
 
 import { DashboardLayout } from "../index.js";
-//import { Link } from "react-router-dom";
-import {User_Catalog} from "./index.js";
-const Dashboard = () =>{
+
+function Dashboard() {
   return (
     <DashboardLayout>
       <main className="wrapper_dashboard">
-      
-        <User_Catalog/>
+        <div className="header">
+          <div className="left">
+            <h1>Dashboard</h1>
+            <ul className="breadcrumb">
+              <li>
+                <a href="#" className="active">Department</a>
+              </li>
+              /
+              {/* <li>
+                <a href="#" className="active">
+                  Shop
+                </a>
+              </li> */}
+            </ul>
+          </div>
+          <a href="#" className="report">
+            <i className="bx bx-cloud-download"></i>
+            <span>Download CSV</span>
+          </a>
+        </div>
+
+        <ul className="insights">
+          <li>
+            <i className='bx bx-code-alt'></i>
+            <span className="info">
+              <h3>1,074</h3>
+              <p>Computer Science</p>
+            </span>
+          </li>
+          <li>
+            <i className="bx bx-show-alt"></i>
+            <span className="info">
+              <h3>3,944</h3>
+              <p>Civil</p>
+            </span>
+          </li>
+          <li>
+            <i className="bx bx-line-chart"></i>
+            <span className="info">
+              <h3>14,721</h3>
+              <p>Mechanical</p>
+            </span>
+          </li>
+          <li><i className='bx bx-dollar-circle'></i>
+            <span className="info">
+            <h3>$6,742</h3>
+            <p>Electronic & communication</p>
+            </span >
+          </li>
+          <li><i className='bx bxs-book'></i>
+            <span className="info">
+            <h3>$6,742</h3>
+            <p>Electrical</p>
+            </span >
+          </li>
+        </ul>
+
         <div className="bottom-data">
           <div className="orders">
             <div className="header">

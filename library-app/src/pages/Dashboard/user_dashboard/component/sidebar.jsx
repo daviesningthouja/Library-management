@@ -3,8 +3,8 @@ import {useState} from 'react';
 import { Link } from 'react-router-dom'; // Assuming you use react-router for navigation
 //import  from "../../assets/ppf.png";
 
-function Sidebar({isSidebarOpen}) {
-  const [activeIndex, setActiveIndex] = useState(0); // Default active index set to "Admin"
+function User_Sidebar({isSidebarOpen}) {
+  const [activeIndex, setActiveIndex] = useState(0); // Default active index set to "dashboard"
   
   
   const handleClick = (index) => {
@@ -17,33 +17,33 @@ function Sidebar({isSidebarOpen}) {
     
       <div className={`sidebar ${isSidebarOpen ? '' : 'close'}`}>
           <a href="#" className="logo">
-              <i className='bx bx-code-alt'></i>
-              <div className="logo-name"><span>Asmr</span>Prog</div>
+            <i className='bx bx-library'></i>
+            <div className="logo-name"><span>Your</span>Library</div>
           </a>
           <ul className="side-menu">
         <li
           className={activeIndex === 0 ? 'active' : ''}
           onClick={() => handleClick(0)}
         >
-          <Link href="#"><i className='bx bxs-dashboard'></i>Dashboard</Link>
+          <Link href="#"><i className='bx bx-command'></i> Dashboard</Link>
         </li>
         <li
           className={activeIndex === 1 ? 'active' : ''}
           onClick={() => handleClick(1)}
         >
-          <Link href="#"><i className='bx bx-analyse'></i>Admin</Link>
+          <Link href="#"><i className='bx bxs-book'></i>Library</Link>
         </li>
         <li
           className={activeIndex === 2 ? 'active' : ''}
           onClick={() => handleClick(2)}
         >
-          <Link href="#"><i className='bx bx-message-square-dots'></i>Library</Link>
+          <Link href="#"><i className='bx bx-collection'></i>Collection</Link>
         </li>
         <li
           className={activeIndex === 3 ? 'active' : ''}
           onClick={() => handleClick(3)}
         >
-          <Link href="#"><i className='bx bx-group'></i>Collection</Link>
+          <Link href="#"><i className='bx bxs-user'></i>Profile</Link>
         </li>
       </ul>
           <ul className="side-menu">
@@ -61,4 +61,4 @@ function Sidebar({isSidebarOpen}) {
 
 
 
-export default Sidebar
+export default User_Sidebar

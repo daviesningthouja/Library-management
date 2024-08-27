@@ -1,11 +1,11 @@
 // src/components/Dashboard/Dashboard.js
 
-import { DashboardLayout } from "../index.js";
-//import { Link } from "react-router-dom";
-import {User_Catalog} from "./index.js";
-const Dashboard = () =>{
+import { User_DashboardLayout } from "../../index.js";
+import { Link } from "react-router-dom";
+import {User_Catalog} from "../index.js";
+const User_Dashboard = () =>{
   return (
-    <DashboardLayout>
+    <User_DashboardLayout>
       <main className="wrapper_dashboard">
       
         <User_Catalog/>
@@ -93,8 +93,8 @@ const Dashboard = () =>{
           </div>
         </div>
       </main>
-    </DashboardLayout>
+    </User_DashboardLayout>
   );
 }
 
-export default Dashboard;
+export default User_Dashboard;
