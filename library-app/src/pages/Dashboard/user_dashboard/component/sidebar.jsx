@@ -1,12 +1,35 @@
 // src/components/Global/Sidebar.js
-import {useState} from 'react';
-import { Link } from 'react-router-dom'; // Assuming you use react-router for navigation
+import {useState, useEffect} from 'react';
+import { Link ,useLocation} from 'react-router-dom'; // Assuming you use react-router for navigation
 //import  from "../../assets/ppf.png";
 
 function User_Sidebar({isSidebarOpen}) {
-  const [activeIndex, setActiveIndex] = useState(0); // Default active index set to "dashboard"
-  
-  
+  const location = useLocation(); // Hook to access the current route
+  const [activeIndex, setActiveIndex] = useState(0); // Default active index set to "Dashboard"
+
+  // Update activeIndex based on the current path
+  useEffect(() => {
+    switch (location.pathname) {
+      case '/user':
+        setActiveIndex(1);
+        break;
+      case '/user/setting': // Example path for User
+        setActiveIndex(3);
+        break;
+      case '/user/profile': // Example path for Collection
+        setActiveIndex(3);
+        break;
+      case '/user/collection': // Example path for Collection
+        setActiveIndex(2);
+        break;
+      default:
+        setActiveIndex(0); // Default to Dashboard
+    }
+    
+  }, [location.pathname]);
+
+ 
+
   const handleClick = (index) => {
     setActiveIndex(index);
   };
@@ -16,34 +39,34 @@ function User_Sidebar({isSidebarOpen}) {
   return (
     
       <div className={`sidebar ${isSidebarOpen ? '' : 'close'}`}>
-          <a href="#" className="logo">
+          <Link to="#" className="logo">
             <i className='bx bx-library'></i>
             <div className="logo-name"><span>Your</span>Library</div>
-          </a>
+          </Link>
           <ul className="side-menu">
         <li
           className={activeIndex === 0 ? 'active' : ''}
           onClick={() => handleClick(0)}
         >
-          <Link href="#"><i className='bx bx-command'></i> Dashboard</Link>
+          <Link to="/user/dashboard"><i className='bx bx-command'></i> Dashboard</Link>
         </li>
         <li
           className={activeIndex === 1 ? 'active' : ''}
           onClick={() => handleClick(1)}
         >
-          <Link href="#"><i className='bx bxs-book'></i>Library</Link>
+          <Link to="#"><i className='bx bxs-book'></i>Library</Link>
         </li>
         <li
           className={activeIndex === 2 ? 'active' : ''}
           onClick={() => handleClick(2)}
         >
-          <Link href="#"><i className='bx bx-collection'></i>Collection</Link>
+          <Link to="/user/collection"><i className='bx bx-collection'></i>Collection</Link>
         </li>
         <li
           className={activeIndex === 3 ? 'active' : ''}
           onClick={() => handleClick(3)}
         >
-          <Link href="#"><i className='bx bxs-user'></i>Profile</Link>
+          <Link to="/user/profile"><i className='bx bxs-user'></i>Profile</Link>
         </li>
       </ul>
           <ul className="side-menu">

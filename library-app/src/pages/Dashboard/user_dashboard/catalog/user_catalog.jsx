@@ -8,7 +8,7 @@ const User_Catalog = () => {
     <div>
       <div className="header">
           <div className="left">
-            <h2>Dashboard</h2>
+            <h1>Dashboard</h1>
             <ul className="breadcrumb">
               <Link to="/admin/Dashboard">
               <li>
@@ -21,7 +21,7 @@ const User_Catalog = () => {
         </div>
 
         <ul className="insights">
-          <Link to="#">
+          <Link to="/user/profile">
           <li>
             <i className='bx bx-code-alt'></i>
             <span className="info">

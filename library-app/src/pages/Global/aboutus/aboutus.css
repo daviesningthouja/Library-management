@@ -1,0 +1,45 @@
+.aboutus-wrapper{
+
+}
+
+.aboutus-section{
+    text-align: center;
+    padding: 20px;
+    height: 100vh;
+}
+.aboutus-hero-contain{
+    height: 50%;
+    width: 100%;
+    padding: 40px;
+}
+.hero-txt{
+    display: flex;
+    flex-direction: column;
+    text-align: start;
+    gap: 10px;
+    padding: 40px 40px 0 40px;
+}
+
+.dev-details{
+    display: grid;
+    gap: 50px;
+    grid-template-columns: auto auto ;
+    background-color: #2196F3;
+    padding: 10px;
+}
+
+.dev-card{
+    background-color: rgba(255, 255, 255, 0.8);
+    border: 1px solid rgba(0, 0, 0, 0.8);
+    padding: 20px;
+    font-size: 30px;
+    text-align: center;
+}
+.dev-pfp img{
+    height: 100px;
+    width: ;
+}
+
+.dev-pfp{
+    
+}

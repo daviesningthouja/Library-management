@@ -1,15 +1,14 @@
 import {Navbar, Footer} from '../../components';
-
+import './MainLayout.css'
 const MainLayout = ({children}) =>{
   return (
-    <div className="App">
-      <div className="gradient_bg">
-         <Navbar/>
-        {children}
-       </div>
-      
-       <Footer/>
-     </div> 
+    <main className='App'>
+     <Navbar/>
+      <div className='wrapper-landing'>
+          {children}
+        <Footer/>
+      </div>
+    </main>
   )
 }
 

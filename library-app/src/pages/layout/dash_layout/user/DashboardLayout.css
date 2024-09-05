@@ -1,6 +1,37 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap');
+@import url('https://fonts.cdnfonts.com/css/segoe-ui-4?styles=18006,18004');
+
+@font-face {
+    font-family: 'Segoe Bold';
+    font-style: normal;
+    font-weight: 700;
+    src: local('Segoe UI Bold'), local('SegoeUI-bold'), local('segoeuib');
+  }
+  @font-face {
+    font-family: 'Segoe SemiBold';
+    font-style: normal;
+    font-weight: 600;
+    src: local('Segoe UI Semibold'), local('SegoeUI-Semibold');
+  }
+  @font-face {
+    font-family: 'Segoe Normal';
+    font-style: normal;
+    font-weight: 400;
+    src: local('Segoe UI'), local('SegoeUI');
+  }
+  @font-face {
+    font-family: 'Segoe Light';
+    font-style: normal;
+    font-weight: 300;
+    src: local('Segoe UI Light'), local('SegoeUI-Light');
+  }
 
 :root {
+    --fontSdown:'Segoe UI' ;
+    --fontSBold:'Segoe Bold';     
+    --fontSLight: 'Segoe Light'; 
+    --fontSSBold: 'Segoe Semibold';
+    --fontSNormal: 'Segoe Normal';                                
     --light: #f6f6f9;
     --primary: #1976D2;
     --light-primary: #CFE8FF;
@@ -13,6 +44,7 @@
     --light-warning: #FFF2C6;
     --success: #388E3C;
     --light-success: #BBF7D0;
+    --light-dark: hsla(309, 1%, 25%, 1);
 }
 
 
@@ -37,11 +69,13 @@ body.dark{
     --light: #222424;
     --grey: #25252c;
     --dark: #ffffff;
+    --light-dark:  #ffffff;
 }
 
 .wrapper_dashboardlayout{
     background: var(--grey);
     overflow-x: hidden;
+    
 }
 
 
@@ -170,6 +204,8 @@ body.dark{
     width: calc(100% - 230px);
     left: 230px;
     transition: all 0.3s ease;
+    overflow: hidden;
+    
 }
 
 .sidebar.close~.content{
@@ -303,12 +339,17 @@ body.dark{
 .content nav #theme-toggle:checked+.theme-toggle::before{
     left: calc(100% - (25px - 4px) - 2px);
 }
-
-.content main{
+.wrapper_dashboard{
     width: 100%;
     padding: 36px 24px;
-    max-height: calc(100vh - 56px);
+    max-height: calc(100vh - 56px); 
+    overflow-y: scroll;
 }
+/* .content main{
+    width: 100%;
+    padding: 36px 20px;
+    max-height: calc(100vh - 56px);
+} */
 
 .content main .header{
     display: flex;
@@ -319,9 +360,9 @@ body.dark{
 }
 
 .content main .header .left h1{
-    font-size: 36px;
+    font-size: 19px;
     font-weight: 600;
-    margin-bottom: 10px;
+    margin-bottom: 4px;
     color: var(--dark);
 }
 

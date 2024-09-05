@@ -4,7 +4,7 @@ import App from './App.jsx'
 
 
 import './index.css'
-import {Home, NoPage, LoginForm, Registration, User_Dashboard, Admin_Dashboard, Admin_Dash} from './pages';
+import {Home, Service,Aboutus,Product, NoPage, LoginForm, Registration, User_Dashboard, Admin_Dashboard, Admin_Dash,User_Profile, User_Setting, User_Collection} from './pages';
 // Router
 import {
 createBrowserRouter,RouterProvider,} from "react-router-dom";
@@ -19,6 +19,21 @@ const router = createBrowserRouter([
     path: "Home",
     element: <Home/>,
   },
+  {
+    path: "Service",
+    element: <Service/>,
+  },
+  {
+    path: "About",
+    element: <Aboutus/>,
+  },
+  {
+    path: "Product",
+    element: <Product/>,
+  },
+
+
+
   {
     path: "/admin/Dashboard",
     element: <Admin_Dashboard/>
@@ -35,6 +50,18 @@ const router = createBrowserRouter([
   {
     path: "/user/Dashboard",
     element: <User_Dashboard/>,
+  },
+  {
+    path: "/user/profile",
+    element: <User_Profile/>,
+  },
+  {
+    path: "/user/collection",
+    element: <User_Collection/>,
+  },
+  {
+    path: "/user/setting",
+    element: <User_Setting/>
   },
   //admin/dashboard
   //user/dashboard

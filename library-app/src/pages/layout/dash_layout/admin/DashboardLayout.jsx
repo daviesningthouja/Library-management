@@ -1,7 +1,7 @@
 import './DashboardLayout.css';
 import { Admin_Topbar, Admin_Sidebar } from '../../../Dashboard/index';
 import { useState ,useEffect} from 'react';
-const User_DashboardLayout = ({children}) => {
+const Admin_DashboardLayout = ({children}) => {
    // Initialize the sidebar state from local storage, defaulting to 'true' if not set
    const [isSidebarOpen, setIsSidebarOpen] = useState(
     () => JSON.parse(localStorage.getItem('isSidebarOpen')) ?? true
@@ -33,4 +33,4 @@ const User_DashboardLayout = ({children}) => {
 // style={{ display: 'flex' }
 // style={{ marginLeft: '200px', padding: '20px', width: '100%' }
 
-export default User_DashboardLayout;
+export default Admin_DashboardLayout;

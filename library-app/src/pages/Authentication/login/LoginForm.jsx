@@ -17,18 +17,17 @@ const LoginForm = () => {
     enrollmentId:"",
     password:""
   });
-
   //pass toggle
   const [showPassword, setShowPassword] = useState(false);
+  const [errors, setErrors] = useState({});
+  const [rememberMe, setRememberMe] = useState(false); // State for Remember Me checkbox
+  const navigate = useNavigate(); //Initialize useNavigate hook
+
+
 
   const togglePasswordVisibility = () => {
     setShowPassword((prevState) => !prevState);
   };
-
-  
-  const navigate = useNavigate(); //Initialize useNavigate hook
-  const [errors, setErrors] = useState({});
-
 
   const validateForm = () => {
     let errors = {};
@@ -43,6 +42,10 @@ const LoginForm = () => {
       [name]: value
     }));
   };
+  const handleRememberMeChange = () => {
+    setRememberMe(prevState => !prevState);
+  };
+
   const handleSubmit = async (e) => {
     e.preventDefault();
 
@@ -54,35 +57,31 @@ const LoginForm = () => {
 
     try {
       const response = await axios.post("http://localhost:8080/api/user/login", value);
-      console.log(response.data);
-      // Redirect or handle success
-      navigate("/Dashboard");
+      
+      if (response.data.token) {
+        // Save token to localStorage or sessionStorage based on Remember Me
+        if (rememberMe) {
+          localStorage.setItem('token', response.data.token);
+        } else {
+          sessionStorage.setItem('sessiontoken', response.data.token);
+        }
+        navigate("/user/Dashboard");
+      }
     } catch (error) {
       if (error.response) {
-        console.log(error.response)
-        // Server responded with a status other than 200 range
+        console.log(error.response);
         if (error.response.status === 404) {
-          
-          alert('Enrollment ID not found.');
-          navigate("/user/Login");
-          
+          setErrors({ submit: 'Enrollment ID not found.' });
         } else if (error.response.status === 401) {
-          
-          
-        alert('Incorrect password. Please try again.');
-        
-        return navigate("/user/Login");
+          setErrors({ submit: 'Incorrect password. Please try again.' });
         } else {
           setErrors({ submit: 'Login failed. Please try again.' });
         }
       } else {
-        // Network or other errors
         setErrors({ submit: 'Network error. Please try again later.' });
-      
+      }
     }
-  }
-};
-
+  };
 
   return (
     <main className='body'>
@@ -107,7 +106,7 @@ const LoginForm = () => {
           {errors.password && <p className="error">{errors.password}</p>}
         </div>
         <div className='remember-forget'>
-          <label><input type="checkbox"/>Remenber me</label>
+          <label><input type="checkbox" checked={rememberMe} onChange={handleRememberMeChange}/>Remenber me</label>
           <Link to="#"> Forget password?</Link>
         </div>
 

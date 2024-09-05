@@ -66,7 +66,7 @@ const createUser = async(req,res) =>{
             enrollmentId: req.body.enrollmentId,
             email: req.body.email,
             password: req.body.password,
-            contact: req.body.contact
+            //contact: req.body.contact
         });
         const savedUser = await newUser.save();
         res.status(200).json(savedUser);
@@ -82,7 +82,8 @@ const loginUser = async (req, res) => {
     
     try {
       // Find user by email
-      const user = await User.findOne({ enrollmentId });
+      console.log(enrollmentId)
+      const user = await User.findOne( {enrollmentId});
       console.log(user)
       if (!user) {
         return res.status(404).send({ message: 'Enrollment ID not found' });

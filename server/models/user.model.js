@@ -22,7 +22,7 @@ const UserSchema = new mongoose.Schema({
     },
     contact: {
         type: String,
-        required: true,
+        
         validate: {
             validator: function(v) {
                 return /^\d{10}$/.test(v); // Ensures the contact is a 10-digit number
@@ -33,19 +33,25 @@ const UserSchema = new mongoose.Schema({
     qrCodeUrl: {
         type: String, // Field to store QR code URL
     },
+    category: {
+        type: String,
+        enum: ['SC', 'ST', 'OBC', 'General'],
+        required: true
+    },
     
     borrowedBooks: [{
-        bookIds: {
+        bookId: {
             type: mongoose.Schema.Types.ObjectId,
             ref: 'Book'
         },
-        title:{
-            type: mongoose.Schema.Types.String,
-            ref: 'Book'
+        title: {
+            type: String,
+        },
+        author: {
+            type: String,
         },
         isbn: {
-            type: mongoose.Schema.Types.String,
-            ref: 'Book'
+            type: String,
         },
         borrowedDate: {
             type: Date,
